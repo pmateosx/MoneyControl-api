@@ -36,6 +36,7 @@ const userSchema = new mongoose.Schema(
       transform: (doc, ret) => {
         delete ret.password;
         delete ret.__v;
+        delete ret._id;
         return ret;
       },
     },
