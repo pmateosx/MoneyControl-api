@@ -5,6 +5,7 @@ const authController = require('../controllers/auth.controller')
 const authMiddleware = require('../middlewares/auth.middleware')
 const userController = require('../controllers/user.controller')
 const incomeController = require('../controllers/income.controller')
+const expenseController = require('../controllers/expense.controller')
 
 // Home
 router.get('/', (req, res, next) => res.status(200).json({ ok: true }))
@@ -22,6 +23,12 @@ router.post('/income/new', authMiddleware.isAuthenticated, incomeController.crea
 router.get('/income/:id', authMiddleware.isAuthenticated, incomeController.detail)
 router.patch('/income/:id', authMiddleware.isAuthenticated, incomeController.update)
 router.delete('/income/:id', authMiddleware.isAuthenticated, incomeController.delete)
+
+// Expense
+router.post('/expense/new', authMiddleware.isAuthenticated, expenseController.create)
+router.get('/expense/:id', authMiddleware.isAuthenticated, expenseController.detail)
+router.patch('/expense/:id', authMiddleware.isAuthenticated, expenseController.update)
+router.delete('/expense/:id', authMiddleware.isAuthenticated, expenseController.delete)
 
 
 module.exports = router
