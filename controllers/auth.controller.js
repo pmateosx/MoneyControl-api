@@ -13,7 +13,6 @@ module.exports.create = (req, res, next) => {
 module.exports.login = (req, res, next) => {
   // Take password and email to validate
   const { email, password } = req.body
-
   const throwException = () => next(createError(401, 'Incorrect credentials'))
 
   if (!email || !password) {
