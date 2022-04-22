@@ -6,6 +6,7 @@ const authMiddleware = require('../middlewares/auth.middleware')
 const userController = require('../controllers/user.controller')
 const incomeController = require('../controllers/income.controller')
 const expenseController = require('../controllers/expense.controller')
+const goalController = require('../controllers/goal.controller')
 
 // Home
 router.get('/', (req, res, next) => res.status(200).json({ ok: true }))
@@ -29,6 +30,12 @@ router.post('/expense/new', authMiddleware.isAuthenticated, expenseController.cr
 router.get('/expense/:id', authMiddleware.isAuthenticated, expenseController.detail)
 router.patch('/expense/:id', authMiddleware.isAuthenticated, expenseController.update)
 router.delete('/expense/:id', authMiddleware.isAuthenticated, expenseController.delete)
+
+// Goal
+router.post('/goal/new', authMiddleware.isAuthenticated, goalController.create)
+router.get('/goal/:id', authMiddleware.isAuthenticated, goalController.detail)
+router.patch('/goal/:id', authMiddleware.isAuthenticated, goalController.update)
+router.delete('/goal/:id', authMiddleware.isAuthenticated, goalController.delete)
 
 
 module.exports = router
