@@ -10,6 +10,13 @@ const expenseSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Amount is required"]
     },
+    category: {
+      type: String,
+      required: [true, "Category is required"]
+    },
+    frequency: {
+      type: String
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
