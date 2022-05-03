@@ -47,6 +47,9 @@ userSchema.virtual('expense', {
     ref: 'Expense',
     localField: '_id',
     foreignField: 'user',
+    options: {sort:{
+      'createdAt': -1
+    }},
     justOne: false,
   })
 
@@ -54,12 +57,18 @@ userSchema.virtual('income', {
     ref: 'Income',
     localField: '_id',
     foreignField: 'user',
+    options: {sort:{
+      'createdAt': -1
+    }},
     justOne: false,
   })
 userSchema.virtual('goal', {
     ref: 'Goal',
     localField: '_id',
     foreignField: 'user',
+    options: {sort:{
+      'createdAt': -1
+    }},
     justOne: false,
   })
 

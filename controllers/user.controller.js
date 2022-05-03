@@ -6,9 +6,7 @@ require('../models/Goal.model')
 
 module.exports.getCurrentUser = (req, res, next) => {
     User.findById(req.currentUser)
-        .populate('income')
-        .populate('goal')
-        .populate('expense')
+        .populate('income goal expense')
         .then((user) => {
             if(!user){
                 next(createError(404, 'User not found'))
@@ -23,9 +21,7 @@ module.exports.getUserById = (req, res, next) => {
     const { id } = req.params
 
     User.findById(id)
-        .populate('income')
-        .populate('goal')
-        .populate('expense')
+        .populate('income goal expense')
         .then( user => {
             if (!user){
                 next(createError(404, 'User not found'))
