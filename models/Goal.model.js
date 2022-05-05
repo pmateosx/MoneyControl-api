@@ -10,11 +10,15 @@ const goalSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Amount is required"]
     },
+    main: {
+      type: Boolean,
+      required: [true, "Question is required"]
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
-      },
+    },
   },
   {
     timestamps: true,

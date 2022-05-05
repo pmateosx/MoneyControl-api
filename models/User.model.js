@@ -62,6 +62,7 @@ userSchema.virtual('income', {
     }},
     justOne: false,
   })
+  
 userSchema.virtual('goal', {
     ref: 'Goal',
     localField: '_id',
