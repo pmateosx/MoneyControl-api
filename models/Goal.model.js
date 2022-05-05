@@ -6,6 +6,10 @@ const goalSchema = new mongoose.Schema(
       type: String,
       required: [true, "Goal name is required"],
     },
+    goalAmount: {
+      type: Number,
+      required: [true, "Goal amount is required"]
+    },
     amount: {
       type: Number,
       required: [true, "Amount is required"]
