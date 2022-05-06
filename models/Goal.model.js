@@ -16,7 +16,7 @@ const goalSchema = new mongoose.Schema(
     },
     main: {
       type: Boolean,
-      required: [true, "Question is required"]
+      required: false
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

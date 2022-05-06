@@ -33,6 +33,7 @@ router.delete('/expense/:id', authMiddleware.isAuthenticated, expenseController.
 
 // Goal
 router.post('/goal/new', authMiddleware.isAuthenticated, goalController.create)
+router.put('/goal/main/:id',authMiddleware.isAuthenticated, goalController.maineo)
 router.get('/goal/:id', authMiddleware.isAuthenticated, goalController.detail)
 router.patch('/goal/:id', authMiddleware.isAuthenticated, goalController.update)
 router.delete('/goal/:id', authMiddleware.isAuthenticated, goalController.delete)
